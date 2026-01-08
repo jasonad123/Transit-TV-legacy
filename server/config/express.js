@@ -48,16 +48,16 @@ module.exports = function(app) {
   app.engine('html', require('ejs').renderFile);
   app.set('view engine', 'html');
   app.use(compression());
-  app.use(bodyParser.urlencoded({ extended: false, limit: '1mb' }));
+  app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }));
   app.use(bodyParser.json({ limit: '1mb' }));
   app.use(methodOverride());
   app.use(cookieParser());
 
   if ('development' === env) {
     app.use(require('connect-livereload')());
-    app.use(express.static(path.join(config.root, '.tmp')));
-    app.use(express.static(path.join(config.root, 'client')));
-    app.use('/node_modules', express.static(path.join(config.root, 'node_modules')));
+    app.use(express.static(path.join(config.root, '.tmp'), { dotfiles: 'allow' }));
+    app.use(express.static(path.join(config.root, 'client'), { dotfiles: 'allow' }));
+    app.use('/node_modules', express.static(path.join(config.root, 'node_modules'), { dotfiles: 'allow' }));
     app.set('appPath', path.join(config.root, 'client'));
     app.use(morgan('dev'));
     app.use(errorHandler()); // Error handler - has to be last
@@ -71,6 +71,7 @@ module.exports = function(app) {
     // Set cache headers for static assets in production
     app.use(express.static(path.join(config.root, 'client'), {
       maxAge: '1d',
+      dotfiles: 'allow',
       setHeaders: function(res, path) {
         // Don't cache HTML files
         if (path.endsWith('.html')) {
