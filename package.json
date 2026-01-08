@@ -27,7 +27,7 @@
     "express-async-handler": "^1.2.0",
     "express-session": "~1.18.0",
     "firebase-admin": "~13.6.0",
-    "helmet": "^7.1.0",
+    "helmet": "^8.0.0",
     "jquery": "^3.7.1",
     "jquery-ui-dist": "^1.13.3",
     "lodash": ">=4.17.21",
