@@ -7,10 +7,11 @@ A real-time transit display application that shows arrival times for nearby publ
 [![Powered by Transit API logo](/transit-api-badge.png 'Powered by Transit API logo')](https://transitapp.com)
 
 > [!WARNING]  
-> Transit TV was built by the Transit team as a fun project to demo our API, usage of this project comes with no guarantee of any kind. 
-
-> [!WARNING]
+> Transit TV was built by the Transit team as a fun project to demo our API, usage of this project comes with no guarantee of any kind.
 > Just as the original Transit TV was built by the Transit team as a fun project, ***this*** version of this project comes with no guarantee of any kind. I am **not** affiliated with Transit, just big fans of their app.
+
+> [!TIP]
+> This repository is for my port of _legacy_ AngularJS version (ported over into its own repository to keep things tidy). If you're looking for the actively-maintained version of Transit TV, head on over to the main [Transit TV repo](https://github.com/jasonad123/Transit-TV).
 
 ## Prerequisites
 
@@ -86,46 +87,7 @@ This includes getting an API key from Transit and setting up the `.env.docker` f
    nano .env.docker
    ```
 
-**Create/review the Docker Compose file at `compose.yml`**
-
-   ```yaml
-services:
-  transit-tv:
-    env_file:
-      - .env.docker
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: transit-tv
-    container_name: transit-tv
-    restart: unless-stopped
-    ports:
-      - "8080:8080" # Default port for the application is 8080, change the left side if needed
-    environment:
-      NODE_ENV: "production"
-      # These environment variables will override those in .env.docker if set
-      # LOG_LEVEL: "info"
-    volumes:
-      # Persist any data that needs to be saved between container restarts
-      - ./logs:/app/logs # change this to your desired log directory
-    networks:
-      - transit-network
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 512M
-
-networks:
-  transit-network:
-    driver: bridge
-   ```
+**Create/review the Docker Compose file at [`compose.yaml`](/compose.yaml)**
 
 **Run with Docker Compose:**
 
@@ -186,11 +148,11 @@ ALLOWED_ORIGINS=http://localhost:8080,https://yourdomain.com,https://staging.you
 
 This feature allows you to skip the configuration popup on first launch - automatically setting your location, title, and clock setting. You'll still be able to change the settings at any time.
 
-To use unattended setup, simply modify your relevant `.env` file or environment variables depending on your deployment method (modify them in `.env` for local deployment, `.env.docker` for Docker deployments)
+To use unattended setup, simply modify your relevant `.env` file or environment variables depending on your deployment method.
 
 The following variables are available:
 
-```
+```bash
 # UNATTENDED_SETUP: Enable automatic setup without user interaction (true/false)
 UNATTENDED_SETUP=false
 
@@ -205,7 +167,6 @@ UNATTENDED_TITLE=Transit Display
 # Options: "HH:mm" (24-hour format) or "hh:mm A" (12-hour format with AM/PM)
 UNATTENDED_TIME_FORMAT=HH:mm
 ```
-
 
 ## Project structure
 

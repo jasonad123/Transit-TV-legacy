@@ -1,7 +1,7 @@
 services:
   transit-tv:
     env_file:
-      - .env.docker
+      - .env
     build:
       context: .
       dockerfile: Dockerfile
