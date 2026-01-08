@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "connect-livereload": "^0.6.1",
-    "dotenv-cli": "^8.0.0",
+    "dotenv-cli": "^11.0.0",
     "grunt": "^1.6.1",
     "grunt-angular-templates": "^1.2.0",
     "grunt-autoprefixer": "^3.0.4",
