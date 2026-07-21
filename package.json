@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "server/app.js",
   "engines": {
-    "node": ">=18 <22"
+    "node": ">=22 <24"
   },
   "dependencies": {
     "angular": "^1.8.3",
@@ -26,7 +26,6 @@
     "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
     "express-session": "~1.18.0",
-    "firebase-admin": "~13.6.0",
     "helmet": "^8.0.0",
     "jquery": "^3.7.1",
     "jquery-ui-dist": "^1.13.3",
@@ -79,5 +78,6 @@
     "docker:run": "docker run -p 8080:8080 -e NODE_ENV=production transit-tv",
     "clean": "rm -rf dist node_modules client/vendor .tmp"
   },
-  "private": true
+  "private": true,
+  "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e"
 }
