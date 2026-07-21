@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "server/app.js",
   "engines": {
-    "node": ">=18 <22"
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "angular": "^1.8.3",
@@ -20,20 +20,19 @@
     "composable-middleware": "^0.3.1",
     "compression": "^1.7.4",
     "cookie-parser": "~1.4.7",
-    "dotenv": "^17.0.0",
+    "dotenv": "^17.4.2",
     "ejs": "~3.1.10",
     "errorhandler": "~1.5.1",
-    "express": "^4.19.2",
+    "express": "^4.22.2",
     "express-async-handler": "^1.2.0",
-    "express-session": "~1.18.0",
-    "firebase-admin": "~13.6.0",
-    "helmet": "^8.0.0",
+    "express-session": "~1.18.2",
+    "helmet": "^8.3.0",
     "jquery": "^3.7.1",
     "jquery-ui-dist": "^1.13.3",
-    "lodash": ">=4.17.21",
+    "lodash": "^4.18.1",
     "method-override": "~3.0.0",
     "moment": "^2.30.1",
-    "morgan": "~1.10.0",
+    "morgan": "~1.10.1",
     "request": "^2.88.2",
     "serve-favicon": "~2.5.1",
     "ui-select": "^0.19.8"
@@ -41,7 +40,7 @@
   "devDependencies": {
     "connect-livereload": "^0.6.1",
     "dotenv-cli": "^11.0.0",
-    "grunt": "^1.6.1",
+    "grunt": "^1.6.2",
     "grunt-angular-templates": "^1.2.0",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-build-control": "^0.7.1",
@@ -79,5 +78,6 @@
     "docker:run": "docker run -p 8080:8080 -e NODE_ENV=production transit-tv",
     "clean": "rm -rf dist node_modules client/vendor .tmp"
   },
-  "private": true
+  "private": true,
+  "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e"
 }
