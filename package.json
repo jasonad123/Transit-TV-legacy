@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "server/app.js",
   "engines": {
-    "node": ">=22 <24"
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "angular": "^1.8.3",
