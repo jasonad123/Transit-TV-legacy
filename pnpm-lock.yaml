@@ -66,8 +66,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       express-session:
-        specifier: ~1.18.2
-        version: 1.18.2
+        specifier: ~1.19.0
+        version: 1.19.0
       helmet:
         specifier: ^8.3.0
         version: 8.3.0
@@ -87,8 +87,8 @@ importers:
         specifier: ^2.30.1
         version: 2.30.1
       morgan:
-        specifier: ~1.10.1
-        version: 1.10.1
+        specifier: ~1.11.0
+        version: 1.11.0
       request:
         specifier: ^2.88.2
         version: 2.88.2
@@ -889,8 +889,8 @@ packages:
   express-async-handler@1.2.0:
     resolution: {integrity: sha512-rCSVtPXRmQSW8rmik/AIb2P0op6l7r1fMW538yyvTMltCO4xQEWMmobfrIxN2V1/mVrgxB8Az3reYF6yUZw37w==}
 
-  express-session@1.18.2:
-    resolution: {integrity: sha512-SZjssGQC7TzTs9rpPDuUrR23GNZ9+2+IkA/+IJWmvQilTr5OSliEHGF+D9scbIpdC6yGtTI0/VhaHoVes2AN/A==}
+  express-session@1.19.0:
+    resolution: {integrity: sha512-0csaMkGq+vaiZTmSMMGkfdCOabYv192VbytFypcvI0MANrp+4i/7yEkJ0sbAEhycQjntaKGzYfjfXQyVb7BHMA==}
     engines: {node: '>= 0.8.0'}
 
   express@4.22.2:
@@ -1696,8 +1696,8 @@ packages:
   moment@2.30.1:
     resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
 
-  morgan@1.10.1:
-    resolution: {integrity: sha512-223dMRJtI/l25dJKWpgij2cMtywuG/WiUKXdvwfbhGKBhy1puASqXwFzmWZ7+K73vUPoR7SS2Qz2cI/g9MKw0A==}
+  morgan@1.11.0:
+    resolution: {integrity: sha512-zSkVu3t18r39pw4ixfBKvfZi3y2UOqr7d4WYwcj3m8nXpEQK4rPO6GLzs/CExoRgmX3y9EjmmcXqv6jq0SK46g==}
     engines: {node: '>= 0.8.0'}
 
   mout@1.2.4:
@@ -1793,10 +1793,6 @@ packages:
   object.pick@1.3.0:
     resolution: {integrity: sha512-tqa/UMy/CCoYmj+H5qc07qvSL9dqcs/WZENZ1JbtWBlATP+iVOe778gE6MSijnyCnORzDuX6hU+LA4SZ09YjFQ==}
     engines: {node: '>=0.10.0'}
-
-  on-finished@2.3.0:
-    resolution: {integrity: sha512-ikqdkGAAyf/X/gPhXGvfgAytDZtDbr+bkNUJ0N9h5MI/dmdgCs3l6hoHrcUv41sRKew3jIwrp4qQDXiK99Utww==}
-    engines: {node: '>= 0.8'}
 
   on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
@@ -3287,7 +3283,7 @@ snapshots:
 
   express-async-handler@1.2.0: {}
 
-  express-session@1.18.2:
+  express-session@1.19.0:
     dependencies:
       cookie: 0.7.2
       cookie-signature: 1.0.7
@@ -4204,12 +4200,12 @@ snapshots:
 
   moment@2.30.1: {}
 
-  morgan@1.10.1:
+  morgan@1.11.0:
     dependencies:
       basic-auth: 2.0.1
       debug: 2.6.9(supports-color@5.5.0)
       depd: 2.0.0
-      on-finished: 2.3.0
+      on-finished: 2.4.1
       on-headers: 1.1.0
     transitivePeerDependencies:
       - supports-color
@@ -4328,10 +4324,6 @@ snapshots:
   object.pick@1.3.0:
     dependencies:
       isobject: 3.0.1
-
-  on-finished@2.3.0:
-    dependencies:
-      ee-first: 1.1.1
 
   on-finished@2.4.1:
     dependencies:
