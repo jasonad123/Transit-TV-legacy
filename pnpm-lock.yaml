@@ -39,8 +39,8 @@ importers:
         specifier: ~1.20.2
         version: 1.20.6
       bootstrap:
-        specifier: ^3.4.1
-        version: 3.4.1
+        specifier: ^5.0.0
+        version: 5.3.8(@popperjs/core@2.11.8)
       composable-middleware:
         specifier: ^0.3.1
         version: 0.3.1
@@ -194,6 +194,9 @@ importers:
         version: 2.0.0
 
 packages:
+
+  '@popperjs/core@2.11.8':
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
 
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
@@ -410,10 +413,10 @@ packages:
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
-  bootstrap@3.4.1:
-    resolution: {integrity: sha512-yN5oZVmRCwe5aKwzRj6736nSmKDX7pLYwsXiCj/EYmo16hODaBiT4En5btW/jhBF/seV+XMx3aYwukYC3A49DA==}
-    engines: {node: '>=6'}
-    deprecated: This version of Bootstrap is no longer supported. Please upgrade to the latest version.
+  bootstrap@5.3.8:
+    resolution: {integrity: sha512-HP1SZDqaLDPwsNiqRqi5NcP0SSXciX2s9E+RyqJIIqGo+vJeN5AJVM98CXmW/Wux0nQ5L7jeWUdplCEf0Ee+tg==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.8
 
   bower-config@1.4.3:
     resolution: {integrity: sha512-MVyyUk3d1S7d2cl6YISViwJBc2VXCkxF5AUFykvN0PQj5FsUiMNSgAYTso18oRFfyZ6XEtjrgg9MAaufHbOwNw==}
@@ -2555,6 +2558,8 @@ packages:
 
 snapshots:
 
+  '@popperjs/core@2.11.8': {}
+
   '@types/keyv@3.1.4':
     dependencies:
       '@types/node': 24.0.3
@@ -2755,7 +2760,9 @@ snapshots:
 
   boolbase@1.0.0: {}
 
-  bootstrap@3.4.1: {}
+  bootstrap@5.3.8(@popperjs/core@2.11.8):
+    dependencies:
+      '@popperjs/core': 2.11.8
 
   bower-config@1.4.3:
     dependencies:
