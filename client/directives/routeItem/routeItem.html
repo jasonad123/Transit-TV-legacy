@@ -1,13 +1,13 @@
 <div ng-class="{ white: ctrl.useBlackText(route) }" ng-style="{ color: ctrl.useBlackText(route) ? '#000000' : ('#' + route.route_color) }">
   <h2>
-    <img ng-if="route.route_display_short_name && route.route_display_short_name.elements && route.route_display_short_name.elements[0]" 
-         class="{{ 'img' + ctrl.getImageSize(route) }}" 
-         ng-src="{{ ctrl.getImageUrl(route, 0) }}" 
+    <img ng-if="route.route_display_short_name && route.route_display_short_name.elements && route.route_display_short_name.elements[0]"
+         class="{{ 'img' + ctrl.getImageSize(route) }}"
+         ng-src="{{ ctrl.getImageUrl(route, 0) }}"
          alt="Route icon" /><!--
  --><span>{{ route.route_display_short_name && route.route_display_short_name.elements ? route.route_display_short_name.elements[1] : '' }}<i ng-bind="route.branch_code"></i></span><!--
- --><img ng-if="route.route_display_short_name && route.route_display_short_name.elements && route.route_display_short_name.elements[2]" 
-         class="{{ 'img' + ctrl.getImageSize(route) }}" 
-         ng-src="{{ ctrl.getImageUrl(route, 2) }}" 
+ --><img ng-if="route.route_display_short_name && route.route_display_short_name.elements && route.route_display_short_name.elements[2]"
+         class="{{ 'img' + ctrl.getImageSize(route) }}"
+         ng-src="{{ ctrl.getImageUrl(route, 2) }}"
          alt="Route icon" />
   </h2>
 
@@ -32,6 +32,17 @@
           <span class="inactive">&nbsp;</span>
         </h4>
       </div>
+    </div>
+  </div>
+
+  <div ng-if="ctrl.hasAlerts(route)">
+    <div class="route-alert-header" ng-style="ctrl.getCellStyle(route)">
+      <span>{{ route.route_short_name || route.route_long_name }} Alerts</span>
+      <!-- <span ng-if="!route.mode_name">{{ route.route_short_name || route.route_long_name }} Alerts</span> -->
+      <!-- <span ng-if="route.mode_name">{{ route.route_short_name || route.route_long_name }} {{ route.mode_name }} Alerts</span> -->
+    </div>
+    <div class="route-alert-ticker" ng-style="ctrl.getCellStyle(route)">
+      <div class="alert-text" ng-class="{ 'single-alert': ctrl.hasSingleAlert(route) }">{{ ctrl.getAlertText(route) }}</div>
     </div>
   </div>
 </div>
